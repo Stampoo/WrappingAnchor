@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Priority {
+public enum Priority {
     case hight
     case medium
     case low

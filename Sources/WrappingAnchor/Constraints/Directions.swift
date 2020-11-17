@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum yDir {
+public enum yDir {
 
     case top
     case bottom
@@ -23,7 +23,7 @@ enum yDir {
 
 }
 
-enum xDir {
+public enum xDir {
 
     case left
     case right

@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Constraints {
+public enum Constraints {
     
     case fill(view: UIView)
     case pinToCenter(view: UIView)
