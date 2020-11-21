@@ -11,9 +11,11 @@ public extension UIView {
     
     // MARK: - Public methods
 
-    func setConstraints(constraints: Constraints...) {
+    func set(constraints: Constraints...) -> [NSLayoutConstraint] {
         translatesAutoresizingMaskIntoConstraints = false
-        constraints.forEach { NSLayoutConstraint.activate($0.getConstraints(for: self)) }
+        let constraints = constraints.flatMap { $0.getConstraints(for: self) }
+        constraints.forEach { $0.isActive = true }
+        return constraints
     }
 
 }
