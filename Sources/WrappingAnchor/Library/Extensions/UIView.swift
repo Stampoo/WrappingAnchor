@@ -11,6 +11,7 @@ public extension UIView {
     
     // MARK: - Public methods
 
+    @discardableResult
     func set(constraints: Constraints...) -> [NSLayoutConstraint] {
         translatesAutoresizingMaskIntoConstraints = false
         let constraints = constraints.flatMap { $0.getConstraints(for: self) }
