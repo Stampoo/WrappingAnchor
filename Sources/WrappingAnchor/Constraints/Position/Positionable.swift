@@ -13,11 +13,11 @@ open class Positionable: PositionableProtocol {
 
     // MARK: - Private methods
 
-    private weak var view: UIView?
+    private var view: UIView
     public var location: Positionable { self }
     private let isToSafeArea: Bool
-    private var borderableView: Borderable? {
-        isToSafeArea ? view?.safeAreaLayoutGuide : view
+    private var borderableView: Borderable {
+        isToSafeArea ? view.safeAreaLayoutGuide : view
     }
 
     // MARK: - Initializers
@@ -26,6 +26,16 @@ open class Positionable: PositionableProtocol {
         self.view = view
         self.isToSafeArea = isToSafeArea
         view.translatesAutoresizingMaskIntoConstraints = false
+    }
+
+    func top(to: UIView,
+             const: CGFloat = 0,
+             dir: yDir = .top,
+             prior: Priority = .default,
+             equal: PositionEquality = .equal) -> Positionable {
+        let anchor = equal.anchorY(anchor: borderableView.top, toAnchor: to.topAnchor, const: const)
+        anchor.priority = UILayoutPriority(rawValue: prior.priority.rawValue)
+        return self
     }
 
 }
