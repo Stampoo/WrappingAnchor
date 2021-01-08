@@ -7,8 +7,16 @@
 
 import UIKit
 
+extension UIView: PositionConfigurator {
+
+    public var position: Positionable {
+        .init(view: self, isToSafeArea: true)
+    }
+
+}
+
 public extension UIView {
-    
+
     // MARK: - Public methods
 
     @discardableResult
@@ -20,3 +28,22 @@ public extension UIView {
     }
 
 }
+
+extension UIView: Borderable {
+
+    var top: NSLayoutAnchor<NSLayoutYAxisAnchor> {
+        topAnchor
+    }
+    var left: NSLayoutAnchor<NSLayoutXAxisAnchor> {
+        leftAnchor
+    }
+    var right: NSLayoutAnchor<NSLayoutXAxisAnchor> {
+        rightAnchor
+    }
+    var bottom: NSLayoutAnchor<NSLayoutYAxisAnchor> {
+        bottomAnchor
+    }
+
+}
+
+
