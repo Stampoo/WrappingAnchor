@@ -41,5 +41,18 @@ extension PositionEquality {
         }
     }
 
-}
+    func sideAnchor(anchor: NSLayoutDimension, toAnchor: NSLayoutDimension? = nil, const: CGFloat) -> NSLayoutConstraint {
+        guard let toAnchor = toAnchor else {
+            return anchor.constraint(equalToConstant: const)
+        }
+        switch self {
+        case .equal:
+            return anchor.constraint(equalTo: toAnchor, constant: const)
+        case .lessOrEqual:
+            return anchor.constraint(lessThanOrEqualTo: toAnchor, constant: const)
+        case .moreOrEqual:
+            return anchor.constraint(greaterThanOrEqualTo: toAnchor, constant: const)
+        }
+    }
 
+}
