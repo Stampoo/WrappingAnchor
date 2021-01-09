@@ -9,16 +9,16 @@ import UIKit
 
 extension UILayoutGuide: Borderable {
 
-    var top: NSLayoutAnchor<NSLayoutYAxisAnchor> {
+    public var top: NSLayoutAnchor<NSLayoutYAxisAnchor> {
         topAnchor
     }
-    var left: NSLayoutAnchor<NSLayoutXAxisAnchor> {
+    public var left: NSLayoutAnchor<NSLayoutXAxisAnchor> {
         leftAnchor
     }
-    var right: NSLayoutAnchor<NSLayoutXAxisAnchor> {
+    public var right: NSLayoutAnchor<NSLayoutXAxisAnchor> {
         rightAnchor
     }
-    var bottom: NSLayoutAnchor<NSLayoutYAxisAnchor> {
+    public var bottom: NSLayoutAnchor<NSLayoutYAxisAnchor> {
         bottomAnchor
     }
 

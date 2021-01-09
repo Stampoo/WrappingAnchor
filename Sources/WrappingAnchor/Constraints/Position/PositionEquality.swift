@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum PositionEquality {
+public enum PositionEquality {
     case equal
     case lessOrEqual
     case moreOrEqual

@@ -21,6 +21,15 @@ public enum yDir {
         }
     }
 
+    func getDir(to view: Borderable) -> NSLayoutAnchor<NSLayoutYAxisAnchor> {
+        switch self {
+        case .top:
+            return view.top
+        case .bottom:
+            return view.bottom
+        }
+    }
+
 }
 
 public enum xDir {
@@ -34,6 +43,15 @@ public enum xDir {
             return view.leftAnchor
         case .right:
             return view.rightAnchor
+        }
+    }
+
+    func getDir(to view: Borderable) -> NSLayoutAnchor<NSLayoutXAxisAnchor> {
+        switch self {
+        case .left:
+            return view.left
+        case .right:
+            return view.right
         }
     }
 

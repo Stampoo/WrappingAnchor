@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol Borderable {
+public protocol Borderable {
 
     var top: NSLayoutAnchor<NSLayoutYAxisAnchor> { get }
     var left: NSLayoutAnchor<NSLayoutXAxisAnchor> { get }
