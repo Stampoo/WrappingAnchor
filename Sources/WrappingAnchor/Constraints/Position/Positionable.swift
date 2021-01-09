@@ -81,7 +81,7 @@ open class Positionable: PositionableProtocol {
     }
 
     @discardableResult
-    func height(to view: UIView? = nil,
+    public func height(to view: UIView? = nil,
                 const: CGFloat = 0,
                 priority: Priority = .default,
                 equal: PositionEquality = .equal) -> Positionable {
@@ -96,7 +96,7 @@ open class Positionable: PositionableProtocol {
     }
 
     @discardableResult
-    func width(to view: UIView? = nil,
+    public func width(to view: UIView? = nil,
                 const: CGFloat = 0,
                 priority: Priority = .default,
                 equal: PositionEquality = .equal) -> Positionable {
@@ -110,7 +110,7 @@ open class Positionable: PositionableProtocol {
         return self
     }
 
-    func size(to view: UIView? = nil, size: CGSize = .zero) -> Positionable {
+    public func size(to view: UIView? = nil, size: CGSize = .zero) -> Positionable {
         height(to: view, const: size.height)
         width(to: view, const: size.width)
         return self
