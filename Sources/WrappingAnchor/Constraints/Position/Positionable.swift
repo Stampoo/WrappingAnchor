@@ -44,7 +44,7 @@ open class Positionable: PositionableProtocol {
              dir: yDir = .bottom,
              prior: Priority = .default,
              equal: PositionEquality = .equal) -> Positionable {
-        let anchor = equal.anchorY(anchor: view.bottom, toAnchor: dir.getDir(to: to), const: const)
+        let anchor = equal.anchorY(anchor: view.bottom, toAnchor: dir.getDir(to: to), const: -const)
         setPriorityAndActivate(anchor, priority: prior)
         return self
     }
@@ -66,7 +66,7 @@ open class Positionable: PositionableProtocol {
              dir: xDir = .right,
              prior: Priority = .default,
              equal: PositionEquality = .equal) -> Positionable {
-        let anchor = equal.anchorX(anchor: view.right, toAnchor: dir.getDir(to: to), const: const)
+        let anchor = equal.anchorX(anchor: view.right, toAnchor: dir.getDir(to: to), const: -const)
         setPriorityAndActivate(anchor, priority: prior)
         return self
     }
