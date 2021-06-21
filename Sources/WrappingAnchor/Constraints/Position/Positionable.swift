@@ -202,12 +202,16 @@ open class Positionable: PositionableProtocol {
     }
 
     private func disableOldConstraintIfNeeded(direction: Direction) {
-        view.constraints.first { [weak view] constrintsInView in
+        let index = viewsWithConstraints[view]?.firstIndex { [weak view] constrintsInView in
             guard let view = view else {
                 return false
             }
             return constrintsInView.identifier == direction.identifire(fromCombine: view)
-        }?.isActive = false
+        }
+        if let index = index {
+            viewsWithConstraints[view]?[index].isActive = false
+            viewsWithConstraints[view]?.remove(at: index)
+        }
     }
 
     private func setIdentifireToConstraint(constraintDirection direction: Direction,
